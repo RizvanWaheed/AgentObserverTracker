@@ -1,0 +1,41 @@
+<!-- <li class="nav-item dropdown nav-user-menu" dropdown>
+  <a href="javascript:;" class="nav-link" dropdownToggle>
+    <img
+      class="user-image img-circle elevation-2"
+      src="assets/img/user.png"
+      alt="User Image"
+    />
+    <div class="userinfo">
+      <strong>Farooq Shad</strong>
+      <p>131544</p>
+    </div>
+  </a>
+  <div class="dropdown-menu dropdown-menu-right" *dropdownMenu>
+    <a class="dropdown-item" [routerLink]="['update-password']">
+      <i class="fas fa-user-edit"></i> {{ "UpdatePassword" | localize }}
+    </a>
+    <a class="dropdown-item" href="javascript:;" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i> {{ "Logout" | localize }}
+    </a>
+  </div>
+</li> -->
+<div class="row align-items-center">
+  <nav class="rightnav col" >
+  <a href="" class="ticketbtn">Open Ticket</a>
+  <div class="dropdown" dropdown>
+    <a class="dropdown-toggle" href="javascript:;"  dropdownToggle>
+      <img src="assets/img/user.png" alt="" >
+      <div class="userinfo">
+        <strong>{{shownLoginName}}</strong>
+        <p>131544</p>
+      </div>
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown" x-placement="bottom-start" *dropdownMenu>
+      <a class="dropdown-item" href="javascript:;"><i class="fas fa-tachometer-alt"></i> My Dashboard</a>
+      <a class="dropdown-item" [routerLink]="['update-password']"><i class="fa fa-lock"></i> {{ "UpdatePassword" | localize }} </a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="javascript:;" (click)="logout()" ><i class="fas fa-sign-out-alt"></i> {{ "Logout" | localize }}</a>
+    </div>
+  </div>
+ </nav>
+</div>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14.222" height="14.222" viewBox="0 0 14.222 14.222">
+  <g id="clock" transform="translate(-2.5 -2.5)" opacity="0.4">
+    <path id="Path_4" data-name="Path 4" d="M16.222,9.611A6.611,6.611,0,1,1,9.611,3,6.611,6.611,0,0,1,16.222,9.611Z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path_5" data-name="Path 5" d="M18,9v3.967l2.644,1.322" transform="translate(-8.389 -3.356)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>

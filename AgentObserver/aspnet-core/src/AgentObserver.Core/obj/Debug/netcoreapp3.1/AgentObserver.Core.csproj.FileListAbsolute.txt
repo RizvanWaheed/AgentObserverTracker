@@ -1,0 +1,8 @@
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.Core\bin\Debug\netcoreapp3.1\AgentObserver.Core.deps.json
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.Core\bin\Debug\netcoreapp3.1\AgentObserver.Core.dll
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.Core\bin\Debug\netcoreapp3.1\AgentObserver.Core.pdb
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.Core\obj\Debug\netcoreapp3.1\AgentObserver.Core.csprojAssemblyReference.cache
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.Core\obj\Debug\netcoreapp3.1\AgentObserver.Core.AssemblyInfoInputs.cache
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.Core\obj\Debug\netcoreapp3.1\AgentObserver.Core.AssemblyInfo.cs
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.Core\obj\Debug\netcoreapp3.1\AgentObserver.Core.dll
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.Core\obj\Debug\netcoreapp3.1\AgentObserver.Core.pdb

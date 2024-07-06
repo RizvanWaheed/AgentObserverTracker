@@ -1,0 +1,891 @@
+﻿<div [@routerTransition]>
+  <section class="innercontent" *ngIf="!ActivityWithDetailsDto.isManagerOrSuperVisor">
+      <button style="margin: 10px;" class="btn btn-primary" *ngIf="ActivityWithDetailsDto.isRoleManager" (click)="GetUserStats()" alt=""> Switch Dashboard </button>
+    <h2 class="pt-3 ">Attendence</h2>
+    <div class="row attendence">
+      <div class="col-md-9">
+        <div class="row mb-md-4 mb-2 ">
+          <div class="col-4">
+            <div class="row smrow">
+              <div class="col">
+                <div class="card infocard smcard animatedcard">
+                 <div class="card-body">
+                  <p>Start Time</p>
+                  <strong>{{StatsDto.individualStats.shiftFrom}}</strong>
+                 </div>
+                </div>
+                <div class="card infocard smcard animatedcard">
+                  <div class="card-body">
+                    <p>Spent Hrs</p>
+                  <strong> {{totalSpendTime}} </strong>
+                   </div>
+                  
+                </div>
+              </div>
+              <div class="col">
+                <div class="card infocard smcard animatedcard">
+                  <div class="card-body">
+                    <p>End Time</p>
+                    <strong>{{StatsDto.individualStats.shiftTo}}</strong>
+                   </div>
+                
+                </div>
+                <div class="card infocard smcard animatedcard">
+                  <div class="card-body">
+                    <p>Extra Time</p>
+                    <!-- <strong>{{totalExtraTime}}</strong> -->
+                    <strong>{{totalExtraTime}}</strong>
+                   </div>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card infocard animatedcard">
+              <div class="card-body">
+                <span class="scicon"></span>
+                <p>Schedule</p>
+                <strong>{{StatsDto.individualStats.shiftTiming}}</strong>
+               </div>
+           
+            </div>
+          </div>
+          <div class="col">
+            <div class="card infocard animatedcard ">
+              <div class="card-body">
+                <img src="../../assets/agent-observer-files/present.svg" class="cardimg" alt="">
+                <p>Status</p>
+                <strong>{{StatsDto.individualStats.shiftLegendType}}</strong>
+               </div>
+         
+            </div>
+          </div>
+          <div class="col">
+            <div class="card infocard animatedcard w-f-h">
+              <div class="card-body">
+                <img src="../../assets/agent-observer-files/home.svg" class="cardimg"  alt="">
+                <p>Work at Home</p>
+                <strong *ngIf="StatsDto.combineStats.workAtHome == 1">Yes</strong>
+                <strong *ngIf="StatsDto.combineStats.workAtHome == 0">No</strong>
+               </div>
+        
+            </div>
+          </div>
+        </div>
+       
+        <h2>Schedule</h2>
+        <div class="card schedulecard mb-md-4 mb-2 ">
+          <div class="card-body">
+            <span class="btn bg-light mr-2">Route</span>
+            <strong>DHA-5/Statelife</strong>
+            <span class="text-muted float-right">21-Jul-2020 - 26-Jul-2020</span>
+            <ul>
+              <li>
+                <strong>Pickup</strong>
+                <span class="text-muted"><img src="../../assets/agent-observer-files/clock.svg" alt=""> 7:00 PM</span>
+                <p>Allama Shabbir Ahmed Usmani Rd, Block 7 Gulshan-e-Iqbal, Karachi, Karachi City, Sindh, Pakistan	</p>
+              </li>
+              <li >
+                <strong>Dropoff</strong>
+                <span class="text-muted"><img src="../../assets/agent-observer-files/clock.svg" alt="">  5:00 PM</span>
+                <p>Ibex Tower	</p>
+              </li>
+            </ul>
+            <span class="float-right badge badge-primary">Pickup & Drop</span>
+          </div>
+        </div>
+
+        <h2>Leaves</h2>
+        <div class="card schedulecard">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-md-3">
+                <div class="leave-card">
+                  <p>Annual</p>
+                  <strong>14</strong>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="leave-card">
+                  <p>Sick/Casual</p>
+                  <strong>10</strong>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="leave-card">
+                  <p>Remaining</p>
+                  <strong>23</strong>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="leave-card">
+                 <a href=""> <strong>Apply Leave</strong></a>
+                </div>
+                
+              </div>
+            </div>
+            
+            
+            
+
+            
+            
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="observerinfo">
+          <h2>Observer App</h2>
+          <ul class="oblist" >
+            <li>
+              <span>Checkin Time</span>
+              <strong>{{ActivityDto.checkinTime}}</strong>
+            </li>
+            <li>
+              <span>Inactive Time</span>
+              <strong>{{ActivityDto.totalInActiveTime}}</strong>
+            </li>
+            <li>
+              <span>Active Time</span>
+              <strong>{{ActivityDto.totalActiveTime}}</strong>
+            </li>
+            <li>
+              <span>Current Shift</span>
+              <strong>{{ActivityDto.shiftHours}}</strong>
+            </li>
+            <li>
+              <span>Checkout Time</span>
+              <strong>{{ActivityDto.checkoutTime}}</strong>
+            </li>
+            <li>
+              <span>Break Time</span>
+              <strong>{{ActivityDto.breakTime}}</strong>
+            </li>
+            <li>
+              <span>Break Duration</span>
+              <strong>{{ActivityDto.breakDuration}}</strong>
+            </li>
+            <li>
+              <span>Activity Date</span>
+              <strong>{{ActivityDto.activityDateTime}}</strong>
+            </li>
+            <li>
+              <span>Last Updated Time</span>
+              <strong>{{ActivityDto.lastUpdateTime}}</strong>
+            </li>
+          </ul>
+          <div class="footerrighht">  
+            <a href="/app/statsDetail" class="btn btn-dark">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- user dashboard ends here -->
+  <!-- supervisor dashboard starts here-->
+
+  <section class="innercontent" *ngIf="ActivityWithDetailsDto.isManagerOrSuperVisor">
+    <button style="margin: 10px;" class="btn btn-primary" *ngIf="ActivityWithDetailsDto.isRoleManager" (click)="GetUserStats()" alt=""> Switch Dashboard </button>
+    <div class="filterow">
+      <form action="">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Select Date</mat-label>
+                    <input [formControl]="recordDate" matInput [matDatepicker]="picker" (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker autofilled #picker></mat-datepicker>
+                </mat-form-field> 
+            </div>
+          </div>
+          <!-- <div class="col-md-2">
+            <div class="form-group">
+              <label for="">Departments</label>
+              <input type="text" class="form-control">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="">Teams</label>
+              <input type="text" class="form-control">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="">Managers</label>
+              <input type="text" class="form-control">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="">Users</label>
+              <input type="text" class="form-control">
+            </div>
+          </div> -->
+          <!-- <div class="col-md-2">
+            <div class="form-group">
+              <label for="" class="d-block">&nbsp;</label>
+             <button class="btn btn-primary"><img src="../../assets/agent-observer-files/search.svg" alt=""> Filter</button>
+            </div>
+          </div> -->
+        </div>
+      </form>
+     </div>
+   
+    <div class="row attendence">
+    
+      <div class="col-md-9">
+        <h2 class="pt-3 pt-md-4">Attendence</h2>
+        <div class="row mb-md-4 mb-2 smrow ">
+         
+          <div class="col">
+            <div class="card infocard animatedcard">
+              <div class="card-body">
+                <span class="scicon"></span>
+                <p>Schedule</p>
+                <strong>{{StatsDto.combineStats.teamSchedule}}</strong>
+               </div>
+           
+            </div>
+          </div>
+          <div class="col">
+            <div class="card infocard animatedcard ">
+              <div class="card-body">
+                <img src="../../assets/agent-observer-files/present.svg" class="cardimg" alt="">
+                <p>Present</p>
+                <strong>{{StatsDto.combineStats.present}}</strong>
+               </div>
+         
+            </div>
+          </div>
+          <div class="col">
+            <div class="card infocard animatedcard ">
+              <div class="card-body">
+                <p>Absents</p>
+                <strong>{{StatsDto.combineStats.absent}}</strong>
+               </div>
+         
+            </div>
+          </div>
+          <div class="col">
+            <div class="card infocard animatedcard ">
+              <div class="card-body">
+                <p>Late Arrivals</p>
+                <strong>{{StatsDto.combineStats.lateArrivals}}</strong>
+               </div>
+         
+            </div>
+          </div>
+          <div class="col">
+            <div class="card infocard animatedcard ">
+              <div class="card-body">
+                <p>Early Leavers</p>
+                <strong>{{StatsDto.combineStats.earlyLeavers}}</strong>
+               </div>
+         
+            </div>
+          </div>
+          <div class="col">
+            <div class="card infocard animatedcard w-f-h">
+              <div class="card-body">
+                <img src="../../assets/agent-observer-files/home.svg" class="cardimg"  alt="">
+                <p>Work at Home</p>
+                <strong>{{StatsDto.combineStats.workAtHome}}</strong>
+               </div>
+        
+            </div>
+          </div>
+        </div>
+       
+       
+        <div class="row">
+          <div class="col-md-8">
+            <h2>Leaves</h2>
+            <div class="owl-carousel owl-theme">
+          
+              <div class="card leavescard mb-md-4 mb-2 ">
+                <div class="card-body p-0">
+                  <div class="media">
+                    <span class="imground mr-2"><img src="assets/img/user.png" alt=""></span>
+                    <div class="media-body">
+                      <h2>Farooq Ahmed</h2>
+                      <span class="text-danger">On Leave</span>
+                    </div>
+                  </div>
+                    <ul class="leavinfo">
+                      <li class="col">
+                        <p>Annual</p>
+                        <strong>14</strong>
+                      </li>
+                      <li class="col">
+                        <p>Sick/Casual</p>
+                        <strong>14</strong>
+                      </li>
+                      <li class="col">
+                        <p>Remaining</p>
+                        <strong>14</strong>
+                      </li>
+                    </ul>
+                </div>
+              </div>
+              <div class="card leavescard mb-md-4 mb-2 ">
+                <div class="card-body p-0">
+                  <div class="media">
+                    <span class="imground mr-2"><img src="assets/img/user.png" alt=""></span>
+                    <div class="media-body">
+                      <h2>Farooq Ahmed</h2>
+                      <span class="text-danger">On Leave</span>
+                    </div>
+                  </div>
+                    <ul class="leavinfo">
+                      <li class="col">
+                        <p>Annual</p>
+                        <strong>14</strong>
+                      </li>
+                      <li class="col">
+                        <p>Sick/Casual</p>
+                        <strong>14</strong>
+                      </li>
+                      <li class="col">
+                        <p>Remaining</p>
+                        <strong>14</strong>
+                      </li>
+                    </ul>
+                </div>
+              </div>
+              <div class="card leavescard mb-md-4 mb-2 ">
+                <div class="card-body p-0">
+                  <div class="media">
+                    <span class="imground mr-2"><img src="assets/img/user.png" alt=""></span>
+                    <div class="media-body">
+                      <h2>Farooq Ahmed</h2>
+                      <span class="text-danger">On Leave</span>
+                    </div>
+                  </div>
+                    <ul class="leavinfo">
+                      <li class="col">
+                        <p>Annual</p>
+                        <strong>14</strong>
+                      </li>
+                      <li class="col">
+                        <p>Sick/Casual</p>
+                        <strong>14</strong>
+                      </li>
+                      <li class="col">
+                        <p>Remaining</p>
+                        <strong>14</strong>
+                      </li>
+                    </ul>
+                </div>
+              </div>
+              <div class="card leavescard mb-md-4 mb-2 ">
+                <div class="card-body p-0">
+                  <div class="media">
+                    <span class="imground mr-2"><img src="assets/img/user.png" alt=""></span>
+                    <div class="media-body">
+                      <h2>Farooq Ahmed</h2>
+                      <span class="text-danger">On Leave</span>
+                    </div>
+                  </div>
+                    <ul class="leavinfo">
+                      <li class="col">
+                        <p>Annual</p>
+                        <strong>14</strong>
+                      </li>
+                      <li class="col">
+                        <p>Sick/Casual</p>
+                        <strong>14</strong>
+                      </li>
+                      <li class="col">
+                        <p>Remaining</p>
+                        <strong>14</strong>
+                      </li>
+                    </ul>
+                </div>
+              </div>
+              <div class="card leavescard mb-md-4 mb-2 ">
+                <div class="card-body p-0">
+                  <div class="media">
+                    <span class="imground mr-2"><img src="assets/img/user.png" alt=""></span>
+                    <div class="media-body">
+                      <h2>Farooq Ahmed</h2>
+                      <span class="text-danger">On Leave</span>
+                    </div>
+                  </div>
+                    <ul class="leavinfo">
+                      <li class="col">
+                        <p>Annual</p>
+                        <strong>14</strong>
+                      </li>
+                      <li class="col">
+                        <p>Sick/Casual</p>
+                        <strong>14</strong>
+                      </li>
+                      <li class="col">
+                        <p>Remaining</p>
+                        <strong>14</strong>
+                      </li>
+                    </ul>
+                </div>
+              </div>
+              <div class="card leavescard mb-md-4 mb-2 ">
+                <div class="card-body p-0">
+                  <div class="media">
+                    <span class="imground mr-2"><img src="assets/img/user.png" alt=""></span>
+                    <div class="media-body">
+                      <h2>Farooq Ahmed</h2>
+                      <span class="text-danger">On Leave</span>
+                    </div>
+                  </div>
+                    <ul class="leavinfo">
+                      <li class="col">
+                        <p>Annual</p>
+                        <strong>14</strong>
+                      </li>
+                      <li class="col">
+                        <p>Sick/Casual</p>
+                        <strong>14</strong>
+                      </li>
+                      <li class="col">
+                        <p>Remaining</p>
+                        <strong>14</strong>
+                      </li>
+                    </ul>
+                </div>
+              </div>
+  
+            
+  
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pickanddrop">
+              <h2>Pick&Drop <small class="float-right">  9 Persons</small> </h2>
+            
+              <ul class="oblist">
+                <li>
+                  <span>Umer Masood</span>
+                  <strong>Pickup</strong>
+                </li>
+                <li>
+                  <span>Farooq Shad</span>
+                  <strong>Pick & Drop</strong>
+                </li>
+                <li>
+                  <span>Adeel Saleem</span>
+                  <strong>Drop</strong>
+                </li>
+                <li>
+                  <span>Umer Masood</span>
+                  <strong>Pickup</strong>
+                </li>
+                <li>
+                  <span>Farooq Shad</span>
+                  <strong>Pick & Drop</strong>
+                </li>
+                <li>
+                  <span>Adeel Saleem</span>
+                  <strong>Drop</strong>
+                </li>
+                <li>
+                  <span>Umer Masood</span>
+                  <strong>Pickup</strong>
+                </li>
+                <li>
+                  <span>Farooq Shad</span>
+                  <strong>Pick & Drop</strong>
+                </li>
+                <li>
+                  <span>Adeel Saleem</span>
+                  <strong>Drop</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+       
+      </div>
+      <div class="col-md-3">
+        <aside class="srsidebar">
+
+          <h2 class="pt-3 pt-md-4">Observer App  <small class="float-right text-info">{{ActivityWithDetailsDto.activities.length}} Employees</small></h2>
+       
+          <div class="row smrow">
+            <div class="col-md-6">
+              <div class="card infocard animatedcard  greencard">
+                <div class="card-body">
+                  <p>Active Time</p>
+                  <strong>{{allUserActiveTime}}</strong>
+                 </div>
+           
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card infocard animatedcard greycard ">
+                <div class="card-body">
+                  <p>Inactive Time</p>
+                  <strong>{{allUserInActiveTime}}</strong>
+                 </div>
+           
+              </div>
+            </div>
+          </div>
+          <div class="row smrow">
+            <div class="col-md-6">
+              <div class="card infocard animatedcard ">
+                <div class="card-body">
+                  <p>Break Time</p>
+                  <strong>1 hour 10 mins</strong>
+                 </div>
+           
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card infocard animatedcard ">
+                <div class="card-body">
+                  <p>Total Checkins</p>
+                  <strong>{{totalCheckins}}</strong>
+                 </div>
+           
+              </div>
+            </div>
+          </div>
+          <div class="observerinfo">
+          
+            
+            <ul class="oblist">
+              <li class="headlist">
+                <span>Name</span>
+                <strong>Active / Inactive</strong>
+              </li>
+              <li *ngFor="let item of ActivityWithDetailsDto.activities">
+                <a  [routerLink]="['/app/statsDetail']" [queryParams]="{ username: item.userName }">
+                  <span>{{item.displayName}}</span>
+                  <strong>{{item.totalActiveTime}} <span>/</span> {{item.totalInActiveTime}}</strong>
+                </a>
+              </li>
+            </ul>
+           
+          </div>
+        </aside>
+      </div>
+    </div>
+
+  </section>
+  <!-- supervisor dashboard ends here -->
+
+
+
+
+  <!-- <section class="content-header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <h1>{{ "HomePage" | localize }}</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="content px-2">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-3 col-6">
+          <div class="small-box bg-success">
+            <div class="inner">
+              <h3>8.2k+</h3>
+              <p>Stargazers</p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <a
+              href="https://github.com/aspnetboilerplate/aspnetboilerplate/stargazers"
+              class="small-box-footer"
+              target="_blank"
+            >
+              More info
+              <i class="fas fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-6">
+          <div class="small-box bg-info">
+            <div class="inner">
+              <h3>140+</h3>
+              <p>Contributors</p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <a
+              href="https://github.com/aspnetboilerplate/aspnetboilerplate/graphs/contributors"
+              class="small-box-footer"
+              target="_blank"
+            >
+              More info
+              <i class="fas fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-6">
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <h3>1.6k+</h3>
+              <p>Used / Dependents</p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <a
+              href="https://github.com/aspnetboilerplate/aspnetboilerplate/network/dependents"
+              class="small-box-footer"
+              target="_blank"
+            >
+              More info
+              <i class="fas fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-6">
+          <div class="small-box bg-primary">
+            <div class="inner">
+              <h3>3.1k+</h3>
+              <p>Forks</p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <a
+              href="https://github.com/aspnetboilerplate/aspnetboilerplate/network/members"
+              class="small-box-footer"
+              target="_blank"
+            >
+              More info
+              <i class="fas fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box">
+            <span class="info-box-icon bg-primary elevation-1">
+              <i class="fas fa-plus-circle"></i>
+            </span>
+            <div class="info-box-content">
+              <span class="info-box-text">Commits</span>
+              <span class="info-box-number">
+                6,350+
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box mb-3">
+            <span class="info-box-icon bg-warning elevation-1">
+              <i class="fas fa-exclamation-triangle"></i>
+            </span>
+            <div class="info-box-content">
+              <span class="info-box-text">Issues</span>
+              <span class="info-box-number">
+                170+
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix hidden-md-up"></div>
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box mb-3">
+            <span class="info-box-icon bg-info elevation-1">
+              <i class="fas fa-tag"></i>
+            </span>
+            <div class="info-box-content">
+              <span class="info-box-text">Releases</span>
+              <span class="info-box-number">
+                200+
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box mb-3">
+            <span class="info-box-icon bg-success elevation-1">
+              <i class="fas fa-eye"></i>
+            </span>
+            <div class="info-box-content">
+              <span class="info-box-text">Watching by</span>
+              <span class="info-box-number">
+                810+
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Open Issues</h3>
+            </div>
+            <div class="card-body table-responsive p-0">
+              <table class="table table-hover text-nowrap">
+                <thead class="bg-light">
+                  <tr>
+                    <th>Id</th>
+                    <th class="w-25">Title</th>
+                    <th class="w-25">Labels</th>
+                    <th>Date</th>
+                    <th>Opened by</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://github.com/aspnetboilerplate/aspnetboilerplate/issues/5452"
+                        target="_blank"
+                      >
+                        5452
+                      </a>
+                    </td>
+                    <td>Angular UI migration to AdminLTE 3</td>
+                    <td>
+                      <span class="badge badge-secondary mx-1">
+                        module-zero-core-template
+                      </span>
+                      <span class="badge badge-primary mx-1">
+                        feature
+                      </span>
+                    </td>
+                    <td>11 days ago</td>
+                    <td>iyilm4z</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://github.com/aspnetboilerplate/aspnetboilerplate/issues/5391"
+                        target="_blank"
+                      >
+                        5391
+                      </a>
+                    </td>
+                    <td>
+                      AbpCacheBase should lock the same object for sync and
+                      async
+                    </td>
+                    <td>
+                      <span class="badge badge-danger mx-1">
+                        bug
+                      </span>
+                      <span class="badge badge-success mx-1">
+                        pull request candidate
+                      </span>
+                    </td>
+                    <td>26 days ago</td>
+                    <td>acjh</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://github.com/aspnetboilerplate/aspnetboilerplate/issues/5390"
+                        target="_blank"
+                      >
+                        5390
+                      </a>
+                    </td>
+                    <td>AbpCache sliding/absolute expire time</td>
+                    <td>
+                      <span class="badge badge-warning mx-1">
+                        breaking-change
+                      </span>
+                      <span class="badge badge-info mx-1">enhancement</span>
+                    </td>
+                    <td>27 days ago</td>
+                    <td>ryancyq</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Closed Pull Requests</h3>
+            </div>
+            <div class="card-body table-responsive p-0">
+              <table class="table table-hover text-nowrap">
+                <thead class="bg-light">
+                  <tr>
+                    <th>Id</th>
+                    <th class="w-25">Title</th>
+                    <th class="w-25">Milestone</th>
+                    <th>Date</th>
+                    <th>Made by</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://github.com/aspnetboilerplate/aspnetboilerplate/pull/5430"
+                        target="_blank"
+                      >
+                        5430
+                      </a>
+                    </td>
+                    <td>
+                      Added Dynamic-Parameter-System doc to documentation menu
+                    </td>
+                    <td>v5.6</td>
+                    <td>18 days ago</td>
+                    <td>maliming</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://github.com/aspnetboilerplate/aspnetboilerplate/pull/5362"
+                        target="_blank"
+                      >
+                        5362
+                      </a>
+                    </td>
+                    <td>
+                      Dynamic Parameter Module
+                    </td>
+                    <td>v5.4</td>
+                    <td>25 days ago</td>
+                    <td>demirmusa</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://github.com/aspnetboilerplate/aspnetboilerplate/pull/4924"
+                        target="_blank"
+                      >
+                        4924
+                      </a>
+                    </td>
+                    <td>
+                      ASP.NET Core 3.0 Upgrade
+                    </td>
+                    <td>v5.0</td>
+                    <td>Oct 15</td>
+                    <td>ismcagdas</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+</div>

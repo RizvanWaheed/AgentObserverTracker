@@ -1,0 +1,15 @@
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.EntityFrameworkCore\bin\Debug\netcoreapp3.1\AgentObserver.EntityFrameworkCore.dll.config
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.EntityFrameworkCore\bin\Debug\netcoreapp3.1\AgentObserver.EntityFrameworkCore.deps.json
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.EntityFrameworkCore\bin\Debug\netcoreapp3.1\AgentObserver.EntityFrameworkCore.runtimeconfig.json
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.EntityFrameworkCore\bin\Debug\netcoreapp3.1\AgentObserver.EntityFrameworkCore.runtimeconfig.dev.json
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.EntityFrameworkCore\bin\Debug\netcoreapp3.1\AgentObserver.EntityFrameworkCore.dll
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.EntityFrameworkCore\bin\Debug\netcoreapp3.1\AgentObserver.EntityFrameworkCore.pdb
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.EntityFrameworkCore\bin\Debug\netcoreapp3.1\AgentObserver.Core.dll
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.EntityFrameworkCore\bin\Debug\netcoreapp3.1\AgentObserver.Core.pdb
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.EntityFrameworkCore\obj\Debug\netcoreapp3.1\AgentObserver.EntityFrameworkCore.csprojAssemblyReference.cache
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.EntityFrameworkCore\obj\Debug\netcoreapp3.1\AgentObserver.EntityFrameworkCore.dll.config
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.EntityFrameworkCore\obj\Debug\netcoreapp3.1\AgentObserver.EntityFrameworkCore.AssemblyInfoInputs.cache
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.EntityFrameworkCore\obj\Debug\netcoreapp3.1\AgentObserver.EntityFrameworkCore.AssemblyInfo.cs
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.EntityFrameworkCore\obj\Debug\netcoreapp3.1\AgentObserver.EntityFrameworkCore.csproj.CopyComplete
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.EntityFrameworkCore\obj\Debug\netcoreapp3.1\AgentObserver.EntityFrameworkCore.dll
+D:\agentobserverupdated\Agent Observer Tracker\AgentObserver\aspnet-core\src\AgentObserver.EntityFrameworkCore\obj\Debug\netcoreapp3.1\AgentObserver.EntityFrameworkCore.pdb

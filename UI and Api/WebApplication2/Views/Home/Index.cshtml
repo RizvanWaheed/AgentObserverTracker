@@ -1,0 +1,290 @@
+﻿@using AgentObserverWeb.Models
+@model UsersActivitiesReturnDto
+<link rel="stylesheet" href="https://use.typekit.net/bfq6zzw.css">
+<style>
+    body {
+        background: #F2F4F8;
+        font-family: europa,sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: europa,sans-serif;
+    }
+    .container.body-content {
+        max-width: 100%;
+        padding: 0;
+    }
+    .btn-danger {
+        background: #ED215C;
+        border-color: #ED215C;
+    }
+    .btn-primary {
+        background: #364FCC;
+        border-color: #364FCC;
+    }
+        .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+            color: #ffffff;
+            background-color: #364FCC;
+            border-color: #2d45bd;
+        }
+    .navbar {
+        background-color: #364FCC;
+    }
+    .single {
+        padding: 30px 15px;
+        margin-bottom: 20px;
+        background: #f6f6f6;
+        border: 1px solid #f0f0f0;
+    }
+
+        .single h3.side-title {
+            margin: 0;
+            margin-bottom: 10px;
+            padding: 0;
+            font-size: 14px;
+            color: #3E4B5B;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+            .single h3.side-title:after {
+                content: '';
+                width: 60px;
+                height: 1px;
+                background: #364FCC;
+                display: block;
+                margin-top: 6px;
+            }
+
+        .single ul {
+            margin-bottom: 0;
+        }
+
+        .single li a {
+            color: #9EA5AD;
+            font-size: 14px;
+            border-bottom: 1px solid #f0f0f0;
+            line-height: 36px;
+            display: block;
+            text-decoration: none;
+        }
+            .single li a span {
+                color: #3E4B5B;
+            }
+            .single li a:hover {
+                color: #3E4B5B;
+            }
+
+        .single li:last-child a {
+            border-bottom: 0;
+        }
+
+    .mainapp {
+        padding: 30px;
+    }
+
+        .mainapp aside footer .smlink {
+            margin: 0 10px 0 0;
+        }
+    .mainapp aside .single {
+        min-height: 550px;
+    }
+        .mainapp aside header {
+            background: #DFDFDF;
+            padding: 20px;
+        }
+
+            .mainapp aside header p {
+                margin: 0;
+            }
+
+        .mainapp aside ul.list-unstyled li {
+            padding: 0 10px;
+        }
+
+        
+   .mainapp aside ul.list-unstyled li a {
+        color: #9EA5AD;
+        font-size: 14px;
+        border-bottom: 1px solid #f0f0f0;
+        line-height: 38px;
+        text-decoration: none;
+        display: block;
+    }
+
+                .mainapp aside ul.list-unstyled li a span {
+                    float: right;
+                    color: #3E4B5B;
+                }
+        .mainapp .single.category {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+            .mainapp .single.category li a {
+                color: #9EA5AD;
+                font-size: 13px;
+                border-bottom: 1px solid #f0f0f0;
+                line-height: 26px;
+                display: block;
+                text-decoration: none;
+                letter-spacing: 0.4px;
+            }
+        .mainapp .single.category aside ul.list-unstyled li a {
+            line-height:30px;
+            font-size:13px;
+        }
+        .mainapp aside .single ul {
+            margin-bottom: 40px;
+        }
+    .cselect{
+        width:100%;
+    }
+    .filterrow{
+        padding:10px;
+    }
+    .broderr-0 {
+        border-radius: 0;
+    }
+    .filterrow .form-control {
+        border-radius: 0;
+    }
+    .select2-container--default .select2-selection--single {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 0;
+        height: 34px;
+        line-height: 34px;
+    }
+   
+</style>
+<main class="mainapp">
+    <div class="row filterrow" >
+        
+        <div class="col-md-2">
+            <input type="hidden" name="userlist" id="userList" value='@Model.AppUsers.ToString()' />
+            <input type="hidden" name="deplist" id="departmentList" value='@Model.Department.ToString()' />
+            <input type="hidden" name="managerlist" id="managerList" value='@Model.ManagerOrSuperVisor.ToString()' />
+            <input type="hidden" name="teamlist" id="teamList" value='@Model.Team.ToString()' />
+            <label>Date</label>
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.Datetime, new { @type = "date", @class = "form-control datepicker", @id = "datetimedropdown", @Value = Model.Datetime })
+                @Html.ValidationMessageFor(model => model.Datetime, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+        <div class="col-md-2">
+            <label>Users</label>
+            <select class="user-dropdown cselect" name="state">
+                <option value="">Select User</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label>Teams</label>
+            <select class="team-dropdown cselect" name="state">
+                <option value="">Select Team</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label>Managers</label>
+            <select class="manager-dropdown cselect" name="manager">
+                <option value="">Select Manager</option>
+            </select>
+        </div>
+       
+        <div class="col-md-2">
+            <label>Departments</label>
+            <select class="department-dropdown cselect" name="dep">
+                <option value="">Select Department</option>
+            </select>
+        </div>
+        <div class="col-md-1">
+            <label style="display:block">&nbsp;</label>
+            <a id="recordDate" href="/" class="btn btn-primary broderr-0">Filter</a>
+        </div>
+        
+    </div>
+
+    <section class="userlist">
+        @foreach (var parentItem in Model.Activities)
+        {
+
+         
+            <div class="row mb-3">
+                <div class="col-sm-4">
+                    <aside>
+                        <header>
+                            <h4>@parentItem.UserName</h4>
+                            <p>@parentItem.EmpId</p>
+                        </header>
+                        <div class="single ">
+                            <ul class="list-unstyled">
+                                <li><a href="" title="">Checkin Time <span class="pull-right">@parentItem.CheckinTime</span></a></li>
+                                <li><a href="" title="">Current Shift <span class="pull-right">@parentItem.ShiftHours</span></a></li>
+                                <li><a href="" title="">InActive Time <span class="pull-right">@parentItem.TotalInActiveTime</span></a></li>
+                                <li><a href="" title="">Active Time <span class="pull-right">@parentItem.TotalActiveTime</span></a></li>
+                                <li><a href="" title="">Activity Date <span class="pull-right">@parentItem.ActivityDateTime</span></a></li>
+                                <li><a href="" title="">Last Updated Time <span class="pull-right">@parentItem.LastUpdateTime</span></a></li>
+                                <li><a href="" title="">Checkout Time <span class="pull-right">@parentItem.CheckoutTime</span></a></li>
+                                <li><a href="" title="">Break Time <span class="pull-right">@parentItem.BreakTime</span></a></li>
+                                <li><a href="" title="">Break Duration <span class="pull-right">@parentItem.BreakDuration</span></a></li>
+                            </ul>
+                            @*<footer>
+
+
+                                @if (parentItem.CheckinTime == null)
+                                {   
+                                    <a id="recordDate" href="/Home/MarkCheckin?ntLogin=@parentItem.UserName" class="btn btn-primary">
+                                        <span>Mark Checkin</span>
+                                    </a>
+                                }
+                                @if (parentItem.IsBreak == null || parentItem?.IsBreak == false)
+                                {
+                                    <a id="recordDate" href="/Home/MarkBreak?ntLogin=@parentItem.UserName" class="btn btn-primary">Start Break</a>
+                                }
+                                else
+                                {
+                                    <a id="recordDate" href="/Home/EndBreak?ntLogin=@parentItem.UserName" class="btn btn-primary">End Break</a>
+                                }
+                                
+                                @if (parentItem.CheckinTime != null && parentItem.CheckoutTime == null)
+                                {
+                                    <a id="checkInOut" href="/Home/MarkCheckout?ntLogin=@parentItem.UserName" class="btn btn-danger">Mark CheckOut</a>
+                                }
+                            </footer>*@
+
+                        </div>
+                    </aside>
+                  
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        @foreach (var item in parentItem.HourlyActivities)
+                {
+                            <div class="col-sm-4">
+                                <!-- Category -->
+                                <div class="single category">
+                                    <h3 class="side-title">@item.TimeOfDay</h3>
+                                    <ul class="list-unstyled">
+                                        <li><a href="" title=""> Active Duration <span class="pull-right">@item.ActiveDuration mins</span></a></li>
+                                        <li><a href="" title=""> InActive Duration <span class="pull-right">@item.InActiveDuration mins</span></a></li>
+                                        <li><a href="" title=""> Continous InActive Time <span class="pull-right">@item.MaxContinousInActiveDuration mins</span></a></li>
+                                        <li><a href="" title=""> Minimum InActive Time <span class="pull-right">@item.MinInActiveDuration mins</span></a></li>
+                                        <li><a href="" title=""> Internet Connectivity <span class="pull-right">@item.IsNetworkAvailable </span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+        }
+        @if (Model.Activities.Count == 0)
+        {
+            <p>No Record Found</p>
+        }
+       
+    </section>
+</main>
+

@@ -1,0 +1,89 @@
+﻿<abp-modal-header [title]="'LogIn' | localize" (onCloseClick)="bsModalRef.hide()">
+</abp-modal-header>
+<div class="modal-body loginform">
+  <div class="loginlogo">
+    <img class="appimage" src="assets/agent-observer-files/attendence.svg" alt="">
+  </div>
+  <div [@routerTransition]>
+    <!-- <h4 class="text-center mb-3">{{ "LogIn" | localize }}</h4> -->
+    <form novalidate autocomplete="off" #loginForm="ngForm" (ngSubmit)="login()" >
+      <div class="form-group">
+        <div class="form-holder">
+          <!-- <div class="form-holder"> -->
+            <label for="">Email</label>
+          <input
+            type="text"
+            class="form-control"
+            name="userNameOrEmailAddress"
+            [(ngModel)]="authService.authenticateModel.userNameOrEmailAddress"
+            [placeholder]="'UserNameOrEmail' | localize"
+            required
+            maxlength="256"
+            #userNameOrEmailAddressModel="ngModel"
+            #userNameOrEmailAddressEl
+          />
+          
+        </div>
+        <abp-validation-summary
+          [control]="userNameOrEmailAddressModel"
+          [controlEl]="userNameOrEmailAddressEl"
+        ></abp-validation-summary>
+      </div>
+      <div class="form-group">
+        <div class="form-holder">
+          <label for="">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            [(ngModel)]="authService.authenticateModel.password"
+            [placeholder]="'Password' | localize"
+            required
+            maxlength="32"
+            #passwordModel="ngModel"
+            #passwordEl
+          />
+          
+        </div>
+        <abp-validation-summary
+          [control]="passwordModel"
+          [controlEl]="passwordEl"
+        ></abp-validation-summary>
+      </div>
+      <div class="form-group text-right mb-4">
+        <div class="custom-control custom-checkbox">
+          <input
+            type="checkbox"
+            class="custom-control-input"
+            id="rememberMe"
+            name="rememberMe"
+            [(ngModel)]="authService.rememberMe"
+          />
+          <label for="rememberMe" class="custom-control-label">
+            {{ "RememberMe" | localize }}
+          </label>
+        </div>
+        
+      </div>
+      <div class="form-group">
+        <button
+          type="submit"
+          class="btn btn-primary btn-block"
+          [disabled]="!loginForm.form.valid || submitting"
+        >
+          {{ "LogIn" | localize }}
+        </button>
+      </div>
+    </form>
+    <p *ngIf="isSelfRegistrationAllowed" class="mb-1">
+      <a [routerLink]="['../register']">
+        <i class="fa fa-plus-circle"></i> {{ "Register" | localize }}
+      </a>
+    </p>
+  </div>
+</div>
+
+<!-- <abp-modal-footer
+[saveDisabled]="!loginForm.form.valid || submitting"
+(onCancelClick)="bsModalRef.hide()"
+></abp-modal-footer> -->

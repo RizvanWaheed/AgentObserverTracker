@@ -1,0 +1,44 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgentObserver.AngularUI", "AgentObserver.AngularUI.csproj", "{11BD8782-23F0-45A0-9A00-A213373B0F5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11BD8782-23F0-45A0-9A00-A213373B0F5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11BD8782-23F0-45A0-9A00-A213373B0F5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11BD8782-23F0-45A0-9A00-A213373B0F5D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{11BD8782-23F0-45A0-9A00-A213373B0F5D}.Debug|x64.Build.0 = Debug|Any CPU
+		{11BD8782-23F0-45A0-9A00-A213373B0F5D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{11BD8782-23F0-45A0-9A00-A213373B0F5D}.Debug|x86.Build.0 = Debug|Any CPU
+		{11BD8782-23F0-45A0-9A00-A213373B0F5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11BD8782-23F0-45A0-9A00-A213373B0F5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11BD8782-23F0-45A0-9A00-A213373B0F5D}.Release|x64.ActiveCfg = Release|Any CPU
+		{11BD8782-23F0-45A0-9A00-A213373B0F5D}.Release|x64.Build.0 = Release|Any CPU
+		{11BD8782-23F0-45A0-9A00-A213373B0F5D}.Release|x86.ActiveCfg = Release|Any CPU
+		{11BD8782-23F0-45A0-9A00-A213373B0F5D}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53F8963B-67DC-49D1-B565-B9E0C7C19461}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://10.175.5.134:9080/tfs/vw-project
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = AgentObserver.AngularUI.csproj
+		SccLocalPath1 = .
+	EndGlobalSection
+EndGlobal

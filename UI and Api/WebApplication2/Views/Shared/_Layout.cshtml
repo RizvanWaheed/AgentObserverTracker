@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Agent Observer</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar  navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">
+                    <img src="~/Content/Images/logo.svg" style="margin-left: 20px;max-width: 150px;" alt="Logo" />
+                    
+                </a>
+                @*@Html.ActionLink("Agent Observer", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+            </div>
+            @*<div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
+                </ul>
+            </div>*@
+        </div>
+    </div>
+    <div class="">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Agent Observer</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+    <script>
+        $(document).ready(function () {
+            debugger;
+            $("#datetimedropdown").change(function () {
+                var value = "/home/index?date=" + $("#datetimedropdown").val() + "&username=" + $('.user-dropdown').val() + "&manager=" + $('.manager-dropdown').val() + "&department=" + $('.department-dropdown').val() + "&team=" + $('.team-dropdown').val();
+                $("#recordDate").attr("href", value);
+            });
+            $('.user-dropdown').select2({
+                data: JSON.parse($('#userList').val())
+            });
+            $('.manager-dropdown').select2({
+                data: JSON.parse($('#managerList').val())
+            });
+            $('.department-dropdown').select2({
+                data: JSON.parse($('#departmentList').val())
+            });
+            $('.team-dropdown').select2({
+                data: JSON.parse($('#teamList').val())
+            });
+        });
+        $('.user-dropdown').on("select2:select", function (e) {
+            var value = "/home/index?date=" + $("#datetimedropdown").val() + "&username=" + $('.user-dropdown').val() + "&manager=" + $('.manager-dropdown').val() + "&department=" + $('.department-dropdown').val() + "&team=" + $('.team-dropdown').val();
+            $("#recordDate").attr("href", value);
+        });
+        $('.manager-dropdown').on("select2:select", function (e) {
+            var value = "/home/index?date=" + $("#datetimedropdown").val() + "&username=" + $('.user-dropdown').val() + "&manager=" + $('.manager-dropdown').val() + "&department=" + $('.department-dropdown').val() + "&team=" + $('.team-dropdown').val();
+            $("#recordDate").attr("href", value);
+        });
+        $('.department-dropdown').on("select2:select", function (e) {
+            var value = "/home/index?date=" + $("#datetimedropdown").val() + "&username=" + $('.user-dropdown').val() + "&manager=" + $('.manager-dropdown').val() + "&department=" + $('.department-dropdown').val() + "&team=" + $('.team-dropdown').val();
+            $("#recordDate").attr("href", value);
+        });
+        $('.team-dropdown').on("select2:select", function (e) {
+            var value = "/home/index?date=" + $("#datetimedropdown").val() + "&username=" + $('.user-dropdown').val() + "&manager=" + $('.manager-dropdown').val() + "&department=" + $('.department-dropdown').val() + "&team=" + $('.team-dropdown').val();
+            $("#recordDate").attr("href", value);
+        });
+    </script>
+</body>
+</html>

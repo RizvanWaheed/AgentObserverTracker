@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="184" height="40" viewBox="0 0 184 40">
+  <g id="mega.agent" transform="translate(-393 -271)">
+    <path id="Path_8" data-name="Path 8" d="M63.379,23.065a2.811,2.811,0,1,1,2.811,2.81,2.81,2.81,0,0,1-2.811-2.81Z" transform="translate(416 275.446)" fill="#e70030"/>
+    <text id="Mega" transform="translate(393 302)" fill="#e70030" font-size="32" font-family="Gilroy-ExtraBold, Gilroy" font-weight="800"><tspan x="0" y="0">Mega</tspan></text>
+    <text id="agent" transform="translate(487 300)" fill="#656565" font-size="32" font-family="Gilroy-Regular, Gilroy"><tspan x="0" y="0">agent</tspan></text>
+  </g>
+</svg>

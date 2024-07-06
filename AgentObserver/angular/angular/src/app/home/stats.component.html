@@ -1,0 +1,103 @@
+﻿<div [@routerTransition]>
+  <main class="mainapp">
+   <section class="userlist innercontent">
+      <div class="row justify-content-end">
+          <div class="col-md-3">
+              <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Select Date</mat-label>
+                  <input  [formControl]="recordDate" matInput [matDatepicker]="picker" (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker autofilled #picker></mat-datepicker>
+                </mat-form-field>
+          </div>
+      </div>
+
+     
+        
+     <div class="row">
+       <div class="col-md-4">
+         <aside>
+           <header>
+             <h4>{{ActivityDto.userName}}</h4>
+             <p>{{ActivityDto.empId}}</p>
+           </header>
+           <section>
+             <ul class="oblist">
+               <li>
+                 <span>Chekin Time</span>
+                 <strong>{{ActivityDto.checkinTime}}</strong>
+               </li>
+               <li>
+                 <span>Inactive Time</span>
+                 <strong>{{ActivityDto.totalInActiveTime}}</strong>
+               </li>
+               <li>
+                 <span>Active Time</span>
+                 <strong>{{ActivityDto.totalActiveTime}}</strong>
+               </li>
+               <li>
+                 <span>Current Shift</span>
+                 <strong>{{ActivityDto.shiftHours}}</strong>
+               </li>
+               <li>
+                 <span>Checkout Time</span>
+                 <strong>{{ActivityDto.checkoutTime}}</strong>
+               </li>
+               <li>
+                 <span>Break Time</span>
+                 <strong>{{ActivityDto.breakTime}}</strong>
+               </li>
+               <li>
+                 <span>Break Duration</span>
+                 <strong>{{ActivityDto.breakDuration}}</strong>
+               </li>
+               <li>
+                 <span>Activity Date</span>
+                 <strong>{{ActivityDto.activityDateTime}}</strong>
+               </li>
+               <li>
+                 <span>Last Updated Time</span>
+                 <strong>{{ActivityDto.lastUpdateTime}}</strong>
+               </li>
+             </ul>
+           
+           </section>
+         </aside>
+       </div>
+       <div class="col-md-8">
+         <div class="row smrow">
+           <div *ngFor="let item of ActivityDto.hourlyActivities" class="col-md-4">
+             <div class="card category">
+               <h3 >{{item.timeOfDay}}</h3>
+               <ul class="list-unstyled oblist">
+                   <li>
+                      <span> Active Duration</span>
+                      <strong >{{item.activeDuration}} mins</strong>
+                    </li>
+                   <li>
+                      <span> InActive Duration</span>
+                      <strong >{{item.inActiveDuration}} mins</strong>
+                    </li>
+                   <li>
+                      <span> Continous InActive Time</span>
+                      <strong >{{item.maxContinousInActiveDuration}} mins</strong>
+                    </li>
+                   <li>
+                      <span> Minimum InActive Time</span>
+                      <strong >{{item.minInActiveDuration}} mins</strong>
+                    </li>
+                   <li>
+                      <span> Internet Connectivity</span>
+                      <strong *ngIf="item.isNetworkAvailable">Yes</strong>
+                      <strong *ngIf="!item.isNetworkAvailable">No</strong>
+                    </li>
+               </ul>
+            </div>
+           </div>
+ 
+         </div>
+       </div>
+     </div>
+   </section>
+  </main>
+</div>
